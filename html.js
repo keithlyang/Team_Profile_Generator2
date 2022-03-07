@@ -24,17 +24,20 @@ const generateHTML = (arr) => {
     `
         }else if(arr[i].getRole() == "Engineer"){
             template +=`
-            <h1>Engineer:  ${arr[i].name}</h1>
-            <h1>Id:  ${arr[i].id}</h1>
-            <h1>Email:  ${arr[i].email}</h1>
-            <h1>Github:  ${arr[i].gitHub}</h1>
+            <h2 style="text-align:center;"> Engineer:  ${arr[i].name}</h2>
+
+            <h2 style="text-align:center;"> Id:  ${arr[i].id}</h2>
+
+            <h2 style="text-align:center;"> Email:  ${arr[i].email}</h2>
+
+            <h2 style="text-align:center;"> Github:  ${arr[i].gitHub}</h2>
             `
         }else {
             template +=`
-            <h1>Intern:  ${arr[i].name}</h1>
-            <h1>Id:  ${arr[i].id}</h1>
-            <h1>Email:  ${arr[i].email}</h1>
-            <h1>School:  ${arr[i].school}</h1>
+            <h1 style="font-size:200%;">Intern:  ${arr[i].name}</h1>
+            <h1 style="font-size:200%;">Id:  ${arr[i].id}</h1>
+            <h1 style="font-size:200%;">Email:  ${arr[i].email}</h1>
+            <h1 style="font-size:200%;">School:  ${arr[i].school}</h1>
             `
         }
     }
