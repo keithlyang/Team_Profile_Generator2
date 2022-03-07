@@ -12,29 +12,29 @@ const generateHTML = (arr) => {
 </head>
 <body>`
 
-    console.log(arr, "this is coming from a different file")
+    // console.log(arr, "this is coming from a different file")
     for(i= 0; i< arr.length ; i++){
         console.log(arr[i].getRole())
         if(arr[i].getRole() == "Manager"){
             template +=`
     <h1>Manager:  ${arr[i].name}</h1>
-    <h1>id:  ${arr[i].name}</h1>
-    <h1>email:  ${arr[i].name}</h1>
-    <h1>officeNum:  ${arr[i].name}</h1>
+    <h1>Id:  ${arr[i].id}</h1>
+    <h1>Email:  ${arr[i].email}</h1>
+    <h1>Office Number:  ${arr[i].officeNum}</h1>
     `
         }else if(arr[i].getRole() == "Engineer"){
             template +=`
             <h1>Engineer:  ${arr[i].name}</h1>
-            <h1>id:  ${arr[i].name}</h1>
-            <h1>email:  ${arr[i].name}</h1>
-            <h1>gitHubUserName:  ${arr[i].name}</h1>
+            <h1>Id:  ${arr[i].id}</h1>
+            <h1>Email:  ${arr[i].email}</h1>
+            <h1>Github:  ${arr[i].gitHub}</h1>
             `
         }else {
             template +=`
             <h1>Intern:  ${arr[i].name}</h1>
-            <h1>id:  ${arr[i].name}</h1>
-            <h1>email:  ${arr[i].name}</h1>
-            <h1>school:  ${arr[i].name}</h1>
+            <h1>Id:  ${arr[i].id}</h1>
+            <h1>Email:  ${arr[i].email}</h1>
+            <h1>School:  ${arr[i].school}</h1>
             `
         }
     }

@@ -5,7 +5,6 @@ const inquirer = require("inquirer");
 const Manager = require("./workers/Manager");
 const Engineer = require("./workers/Engineer");
 const Intern = require("./workers/Intern");
-// const { start } = require("repl");
 const generateHTML = require("./html")
 const arrEmployees = [];
 
@@ -34,10 +33,7 @@ const addManager = () => {
         },
     ]).then(({ name, role, email, officeNum }) => {
             const addedManager = new Manager(name, role, email, officeNum)
-
-            // missing something in here
             arrEmployees.push(addedManager)
-            // go back to start
             addEmployee();
         }
 
@@ -64,12 +60,10 @@ const addEngineer = () => {
         {
             type: 'input',
             message: "What the github username?",
-            name: 'gitHubUserName'
+            name: 'gitHub'
         },
-    ]).then(({ name, id, email, gitHubUserName }) => {
-            const addedEngineer = new Engineer(name, id, email, gitHubUserName)
-
-            // missing something in here
+    ]).then((answers) => {
+            const addedEngineer = new Engineer(answers.name, answers.id, answers.email, answers.gitHub)
             arrEmployees.push(addedEngineer)
             // go back to start
             addEmployee();
@@ -102,10 +96,7 @@ const addIntern = () => {
         },
     ]).then(({ name, id, email, school }) => {
             const addedIntern = new Intern(name, id, email, school)
-
-            // missing something in here
             arrEmployees.push(addedIntern)
-            // go back to start
             addEmployee();
         }
 
@@ -139,53 +130,4 @@ const addEmployee = () => {
     })
 }
 
-// // Begin the app
-// const start = () => {
-//     inquirer.prompt([
-//         {
-//             type: "list",
-//             message: "Choose an option:",
-//             choices: ["Add Employee By Role", "View Employee By Role", "View Employee By Email",],
-//             name: "initialChoice"
-//         }
-//     ]).then(resp => {
-//         switch (resp.initialChoice) {
-//             case "Add Employee By Role":
-//                 break;
-
-//             case "View Employee by Role":
-//                 break;
-
-//             case "View Employee By Email":
-//                 break;
-
-//             default:
-//                 break;
-//         }
-//     })
-// }
-
-
-
 addManager();
-// return inquirer
-//   .prompt(
-//     {
-//       message: "Please enter your email",
-//       name: "email",
-//       type: "input",
-//       default: () => { },
-//       validate: function (email) {
-
-//         valid = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)
-
-//         if (valid) {
-//           console.log("Great job");
-//           return true;
-//         } else {
-//           console.log(".  Please enter a valid email")
-//           return false;
-//         }
-//       }
-//     }
-//   );
