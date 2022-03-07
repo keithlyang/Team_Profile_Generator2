@@ -29,8 +29,10 @@ const generateHTML = (arr) => {
             <h2 style="text-align:center;"> Id:  ${arr[i].id}</h2>
 
             <h2 style="text-align:center;"> Email:  ${arr[i].email}</h2>
-
-            <h2 style="text-align:center;"> Github:  ${arr[i].gitHub}</h2>
+            
+            <h2 style="text-align:center;">
+            <a href="https://github.com/keithlyang">github.com/keithlyang</a>
+        </h2>
             `
         }else {
             template +=`
